@@ -1,8 +1,8 @@
 <h1>Listing comments</h1>
 
 <%= will_paginate @comments %>
-<%= link_to 'New Comment', new_post_comment_path(@post) %>
 <%= link_to 'Back to Posts', posts_path %>
+<%= link_to 'New Comment', new_post_comment_path(@post) %>
 
 <table>
   <tr>
@@ -26,6 +26,7 @@
 
 <br />
 <%= will_paginate @comments %>
-<%= link_to 'New Comment', new_post_comment_path(@post) %>
 <%= link_to 'Back to Posts', posts_path %>
+<%= link_to 'New Comment', new_post_comment_path(@post) %>
+
 
