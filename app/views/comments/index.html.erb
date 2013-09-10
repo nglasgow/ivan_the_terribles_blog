@@ -1,5 +1,9 @@
 <h1>Listing comments</h1>
 
+<%= will_paginate @comments %>
+<%= link_to 'New Comment', new_post_comment_path(@post) %>
+<%= link_to 'Back to Posts', posts_path %>
+
 <table>
   <tr>
     <th>Body</th>
@@ -12,14 +16,16 @@
 <% @comments.each do |comment| %>
   <tr>
     <td><%= comment.body %></td>
-    <td><%= comment.post %></td>
-    <td><%= link_to 'Show', comment %></td>
-    <td><%= link_to 'Edit', edit_comment_path(comment) %></td>
-    <td><%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= comment.post.id %></td>
+    <td><%= link_to 'Show Replies', post_comment_path(@post, comment) %></td>
+    <td><%= link_to 'Edit', edit_post_comment_path(@post,comment) %></td>
+    <td><%= link_to 'Destroy', post_comment_path(@post,comment), method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
+<%= will_paginate @comments %>
+<%= link_to 'New Comment', new_post_comment_path(@post) %>
+<%= link_to 'Back to Posts', posts_path %>
 
-<%= link_to 'New Comment', new_comment_path %>

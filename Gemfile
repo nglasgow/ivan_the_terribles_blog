@@ -8,6 +8,7 @@ gem 'rails', '3.2.13'
 gem 'pg'
 #gem 'sqlite3'
 
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -22,6 +23,7 @@ end
 
 gem 'jquery-rails'
 gem 'faker'
+gem 'will_paginate', '> 3.0'
 
 group :development, :test do
   gem 'rspec-rails'
@@ -39,6 +41,7 @@ end
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'rack-mini-profiler'
 end
 
 # To use ActiveModel has_secure_password

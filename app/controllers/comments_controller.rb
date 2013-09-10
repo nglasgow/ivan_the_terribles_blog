@@ -1,8 +1,9 @@
 class CommentsController < ApplicationController
+  before_filter :get_post
   # GET /comments
   # GET /comments.json
   def index
-    @comments = Comment.all
+    @comments = Comment.includes.where(post_id: params[:post_id]).includes(:replies).page(params[:page]).per_page(25)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -69,6 +70,7 @@ class CommentsController < ApplicationController
     end
   end
 
+
   # DELETE /comments/1
   # DELETE /comments/1.json
   def destroy
@@ -79,5 +81,10 @@ class CommentsController < ApplicationController
       format.html { redirect_to comments_url }
       format.json { head :no_content }
     end
+  end
+
+  private
+  def get_post
+    @post = Post.find(params[:post_id])
   end
 end
