@@ -1,5 +1,9 @@
 # My New Blog!
 
+Ivan's blog was updated to improve performance. Now only posts are loaded on the home page (all posts are loaded in approximately 67 ms), and links are provided for comments. Links are provided for replies on the comment page.
+
+![Screenshot of Load](https://raw.github.com/nglasgow/ivan_the_terribles_blog/master/screenshot/Screen%20Shot%202013-09-11%20at%205.51.40%20PM.png)
+
 I've got a lot to say, and now I have a place to say it!!!!!
 
 Read all my amazing posts!!!!! You can load them into the app with: `rake load_blog:load_shit`
