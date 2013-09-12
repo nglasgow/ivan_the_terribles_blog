@@ -1,4 +1,3 @@
-# My New Blog!
 
 Ivan's blog was updated to improve performance. Now only posts are loaded on the home page (all posts are loaded in approximately 67 ms), and links are provided for comments. Links are provided for replies on the comment page.
 
